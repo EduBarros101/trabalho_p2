@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listagem de Personagens de RPG</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>IDADE</th>
+          <th>RAÇA</th>
+          <th>CLASSE</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody th:each="persona : ${personagens}">
+        <tr>
+          <td th:text="${persona.id}"></td>
+          <td th:text="${persona.nome}"></td>
+          <td th:text="${persona.idade}"></td>
+          <td th:text="${persona.raca}"></td>
+          <td th:text="${persona.classe}"></td>
+          <td><a th:href="${'/editar/' + persona.id}">Editar</a></td>
+
+          <td>
+            <form th:action="${'/deletar/' + persona.id}" method="post">
+              <input type="submit" value="Deletar" />
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
