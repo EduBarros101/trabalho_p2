@@ -64,13 +64,13 @@ public class MainController {
     public String cadastro(Model model, @ModelAttribute Personagem persona) {
         PersonagemService cs = ctx.getBean(PersonagemService.class);
         cs.inserirPersonagem(persona);
-        return "redirect:listar";
+        return "redirect:/listar";
     }
 
     @GetMapping("/listar")
     public String listar(Model model) {
         PersonagemService cs = ctx.getBean(PersonagemService.class);
-        List<Personagem> lista = cs.puxarTodosPersonagems();
+        List<Personagem> lista = cs.puxarTodosPersonagens();
         model.addAttribute("personagens", lista);
 
         return "listar";

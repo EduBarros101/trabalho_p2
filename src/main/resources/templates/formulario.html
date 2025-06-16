@@ -10,8 +10,8 @@
 
     <form th:action="@{${link}}" method="POST" th:object="${personagem}">
       Nome: <input type="text" th:field="*{nome}" /> <br />
-      Raça: <input type="text" th:field="*{raca}" /> <br />
       Idade: <input type="text" th:field="*{idade}" /> <br />
+      Raça: <input type="text" th:field="*{raca}" /> <br />
       Classe: <input type="text" th:field="*{classe}" /> <br />
       <input type="submit" th:value="${valor}" />
     </form>

@@ -72,8 +72,8 @@ public class Personagem {
 
     public static Personagem converter(Map<String, Object> registro) {
         int id = (Integer) registro.get("id");
-        int idade = (Integer) registro.get("idade");
         String nome = (String) registro.get("nome");
+        int idade = (Integer) registro.get("idade");
         String raca = (String) registro.get("raca");
         String classe = (String) registro.get("classe");
 

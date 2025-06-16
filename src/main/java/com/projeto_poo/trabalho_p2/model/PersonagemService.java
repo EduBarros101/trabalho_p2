@@ -15,7 +15,7 @@ public class PersonagemService {
         cdao.inserirPersonagem(persona);
     }
 
-    public List<Personagem> puxarTodosPersonagems() {
+    public List<Personagem> puxarTodosPersonagens() {
         return Personagem.converterVarios(cdao.puxarTodosPersonagens());
     }
 
