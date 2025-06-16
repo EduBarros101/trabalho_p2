@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Criação de Personagens de RPG</title>
+  </head>
+  <body>
+    <h1 th:text="@{titulo}">CADASTRO DE PERSONAGEM</h1>
+
+    <form th:action="@{${link}}" method="POST" th:object="${personagem}">
+      Nome: <input type="text" th:field="*{nome}" /> <br />
+      Raça: <input type="text" th:field="*{raca}" /> <br />
+      Idade: <input type="text" th:field="*{idade}" /> <br />
+      Classe: <input type="text" th:field="*{classe}" /> <br />
+      <input type="submit" th:value="${valor}" />
+    </form>
+  </body>
+</html>
